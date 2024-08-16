@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: Code Basics
+  version: 0.0.0
+tags: []
+paths:
+  /languages:
+    get:
+      operationId: Languages_index
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Language'
+                required:
+                  - data
+  /languages/{id}:
+    get:
+      operationId: Languages_show
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/Language'
+                  - $ref: '#/components/schemas/NotFoundError'
+components:
+  schemas:
+    Language:
+      type: object
+      required:
+        - id
+        - name
+        - slug
+        - learn_as
+        - description
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+          minLength: 1
+        slug:
+          type: string
+        learn_as:
+          $ref: '#/components/schemas/learnAs'
+        description:
+          type: string
+    Lesson:
+      type: object
+      required:
+        - id
+        - name
+        - slug
+        - natural_order
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        slug:
+          type: string
+        natural_order:
+          type: number
+    NotFoundError:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          enum:
+            - NOT_FOUND
+        message:
+          type: string
+    learnAs:
+      type: string
+      enum:
+        - first_language
+        - second_language
+servers:
+  - url: https://code-basics.com
+    description: Single server endpoint
+    variables: {}
