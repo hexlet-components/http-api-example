@@ -4,7 +4,7 @@ info:
   version: 0.0.0
 tags: []
 paths:
-  /languages:
+  /api/languages:
     get:
       operationId: Languages_index
       parameters: []
@@ -22,7 +22,7 @@ paths:
                       $ref: '#/components/schemas/Language'
                 required:
                   - data
-  /languages/{id}:
+  /api/languages/{id}:
     get:
       operationId: Languages_show
       parameters:
