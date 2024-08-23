@@ -10,6 +10,7 @@ using TypeSpec.Http;
 @server("https://code-basics.com/api", "Code Basics")
 namespace CodeBasics;
 
+@example(#{ id: 7, name: "CSS", slug: "css", learn_as: learnAs.first_language, description: "Cascading Style Sheets (CSS) allow you to lay out web pages according to given rules. Text styles, block layouts, and animations are all specified via Cascading Style Sheets\n" })
 model Language {
   id: numeric;
 

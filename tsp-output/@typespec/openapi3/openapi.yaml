@@ -62,6 +62,13 @@ components:
           $ref: '#/components/schemas/learnAs'
         description:
           type: string
+      example:
+        id: 7
+        name: CSS
+        slug: css
+        learn_as: first_language
+        description: |
+          Cascading Style Sheets (CSS) allow you to lay out web pages according to given rules. Text styles, block layouts, and animations are all specified via Cascading Style Sheets
     Lesson:
       type: object
       required:
