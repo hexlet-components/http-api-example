@@ -39,7 +39,7 @@ model NotFoundError {
   message: string;
 }
 
-@route("/languages")
+@route("api/languages")
 namespace Languages {
   @get
   op index(): {
