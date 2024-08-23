@@ -2,7 +2,13 @@ install:
 	npm install
 
 compile:
-	tsp compile .
+	npx tsp compile .
 
 mock:
-	npx prism mock openapi.yaml
+	npx prism mock openapi.yaml -h 0.0.0.0
+
+compose-build:
+	docker compose build
+
+compose:
+	docker compose up
