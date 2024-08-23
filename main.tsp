@@ -7,7 +7,7 @@ using TypeSpec.Http;
 @service({
   title: "Code Basics",
 })
-@server("https://code-basics.com", "Single server endpoint")
+@server("https://code-basics.com/api", "Code Basics")
 namespace CodeBasics;
 
 model Language {
@@ -39,7 +39,7 @@ model NotFoundError {
   message: string;
 }
 
-@route("api/languages")
+@route("languages")
 namespace Languages {
   @get
   op index(): {

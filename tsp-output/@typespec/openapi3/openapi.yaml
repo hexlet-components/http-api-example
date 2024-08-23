@@ -4,7 +4,7 @@ info:
   version: 0.0.0
 tags: []
 paths:
-  /api/languages:
+  /languages:
     get:
       operationId: Languages_index
       parameters: []
@@ -22,7 +22,7 @@ paths:
                       $ref: '#/components/schemas/Language'
                 required:
                   - data
-  /api/languages/{id}:
+  /languages/{id}:
     get:
       operationId: Languages_show
       parameters:
@@ -96,6 +96,6 @@ components:
         - first_language
         - second_language
 servers:
-  - url: https://code-basics.com
-    description: Single server endpoint
+  - url: https://code-basics.com/api
+    description: Code Basics
     variables: {}
