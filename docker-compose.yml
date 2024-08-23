@@ -4,5 +4,7 @@ services:
       context: .
     ports:
       - '4010:4010'
+    environment:
+      PORT: 4010
     volumes:
       - ./:/app
